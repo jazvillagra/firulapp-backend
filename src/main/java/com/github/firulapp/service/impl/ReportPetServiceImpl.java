@@ -108,7 +108,7 @@ public class ReportPetServiceImpl implements ReportPetService {
         try {
             if(reportPetDto.getReportType().equals(ReportType.MASCOTA_PERDIDA)){
                 PetDto pet = petService.getPetById(reportPetDto.getPetId());
-                pet.setStatus(PetStatus.ENCONTRADA);
+                pet.setStatus(PetStatus.NORMAL);
                 petService.registerOrUpdatePet(pet);
             }
             reportPetDto.setStatus(ReportStatus.CERRADO);
